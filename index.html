@@ -3,160 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AB Obra & Diseño</title>
+<title>AB obra y diseño</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
 body{
-    margin:0;
-    font-family:'Segoe UI', sans-serif;
-    background:#0b1220;
-    color:white;
+font-family:'Montserrat',sans-serif;
+background:#0f0f0f;
+color:white;
 }
 
-/* NAVBAR */
-
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px 70px;
-    position:fixed;
-    width:100%;
-    top:0;
-    background:rgba(0,0,0,0.85);
-    backdrop-filter:blur(8px);
-    z-index:1000;
+section{
+padding:100px 10%;
 }
 
-.logo{
-    height:50px;
-    width:auto;
+h2{
+font-size:38px;
+margin-bottom:40px;
 }
 
-.menu a{
-    margin-left:35px;
-    text-decoration:none;
-    color:white;
-    font-weight:500;
-    transition:0.3s;
+p{
+line-height:1.6;
+color:#cfcfcf;
 }
 
-.menu a:hover{
-    color:#facc15;
+/* NAV */
+
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 10%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav h2{
+font-weight:800;
+letter-spacing:2px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+opacity:0.6;
 }
 
 /* HERO */
 
 .hero{
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:0 20px;
-    background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("hero.jpg");
-    background-size:cover;
-    background-position:center;
+height:100vh;
+background:url('hero.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom,rgba(0,0,0,0.6),rgba(0,0,0,0.9));
 }
 
 .hero-content{
-    max-width:900px;
+position:relative;
+max-width:700px;
+padding-left:10%;
 }
 
 .hero h1{
-    font-size:48px;
-    margin-bottom:20px;
+font-size:60px;
+font-weight:800;
 }
 
 .hero p{
-    font-size:20px;
-    margin-bottom:30px;
-    opacity:0.85;
+margin-top:20px;
+font-size:20px;
 }
 
-.hero-btn{
-    background:#facc15;
-    color:black;
-    padding:14px 28px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
-.hero-btn:hover{
-    background:#eab308;
-    transform:scale(1.05);
+.card{
+background:#1a1a1a;
+padding:35px;
+border:1px solid #222;
+transition:0.4s;
 }
 
-/* SECCIÓN PAQUETES */
-
-.section{
-    padding:100px 10%;
+.card:hover{
+transform:translateY(-10px);
+background:#202020;
 }
 
-.section h2{
-    text-align:center;
-    margin-bottom:50px;
-    font-size:34px;
+/* PACKAGES */
+
+.packages{
+background:#111;
 }
 
-.table-modern{
-    width:100%;
-    border-collapse:collapse;
-    background:#162033;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0px 10px 30px rgba(0,0,0,0.4);
+.package-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
-.table-modern th{
-    background:#24324a;
-    padding:20px;
+.package{
+background:#1a1a1a;
+padding:40px;
+border:1px solid #333;
+transition:0.4s;
 }
 
-.table-modern td{
-    padding:20px;
-    text-align:center;
-    border-top:1px solid #24324a;
+.package:hover{
+transform:translateY(-10px);
+border:1px solid #d4af37;
 }
 
-.table-modern tr:hover{
-    background:#1c2a42;
+.package h3{
+margin-bottom:20px;
 }
 
-/* BOTÓN WHATSAPP FLOTANTE */
-
-.whatsapp-float{
-    position:fixed;
-    bottom:25px;
-    right:25px;
-    background:#25D366;
-    color:white;
-    font-size:26px;
-    padding:16px 18px;
-    border-radius:50%;
-    box-shadow:0px 5px 15px rgba(0,0,0,0.4);
-    text-decoration:none;
-    transition:0.3s;
+.package ul{
+list-style:none;
+margin-bottom:20px;
 }
 
-.whatsapp-float:hover{
-    transform:scale(1.1);
-    background:#1ebe5d;
+.package ul li{
+margin-bottom:10px;
+color:#cfcfcf;
 }
+
+/* FACTORS */
+
+.factors{
+background:#151515;
+}
+
+/* FOOTER */
 
 footer{
-    text-align:center;
-    padding:30px;
-    background:#070d18;
-    font-size:14px;
-    opacity:0.7;
+background:#0a0a0a;
+padding:50px 10%;
+text-align:center;
+color:#aaa;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+transition:0.3s;
+z-index:2000;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+.whatsapp img{
+width:30px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+section{
+padding:80px 8%;
+}
+
 }
 
 </style>
@@ -164,65 +218,125 @@ footer{
 
 <body>
 
-<nav class="navbar">
-    <img src="logo.png" alt="AB Obra & Diseño" class="logo">
-
-    <div class="menu">
-        <a href="#">Nosotros</a>
-        <a href="#">Servicios</a>
-        <a href="#">Paquetes</a>
-        <a href="#">Contacto</a>
-    </div>
+<nav>
+<h2>AB</h2>
+<div>
+<a href="#nosotros">Nosotros</a>
+<a href="#servicios">Servicios</a>
+<a href="#paquetes">Paquetes</a>
+<a href="#contacto">Contacto</a>
+</div>
 </nav>
 
 <section class="hero">
-    <div class="hero-content">
-        <h1>Arquitectura que transforma espacios</h1>
-        <p>Diseño · Distribución · Construcción</p>
-
-        <a href="https://wa.me/573197662336" target="_blank" class="hero-btn">
-            <i class="fab fa-whatsapp"></i> Cotizar Proyecto
-        </a>
-    </div>
+<div class="hero-content">
+<h1>AB obra y diseño</h1>
+<p>Arquitectura, ingeniería y tecnología integradas para proyectos eficientes y normativos.</p>
+</div>
 </section>
 
-<section class="section">
-    <h2>Nuestros Paquetes</h2>
-
-    <table class="table-modern">
-        <tr>
-            <th>Servicio</th>
-            <th>Incluye</th>
-            <th>Precio</th>
-        </tr>
-
-        <tr>
-            <td>Diseño Básico</td>
-            <td>Planta arquitectónica + Distribución</td>
-            <td>Desde $XXX</td>
-        </tr>
-
-        <tr>
-            <td>Diseño Intermedio</td>
-            <td>Plantas + Fachada + Render</td>
-            <td>Desde $XXX</td>
-        </tr>
-
-        <tr>
-            <td>Proyecto Integral</td>
-            <td>Arquitectura + Estructural + MEP</td>
-            <td>Desde $XXX</td>
-        </tr>
-
-    </table>
+<section id="nosotros">
+<h2>Quiénes somos</h2>
+<p>
+Somos un equipo especializado en diseño integral, coordinación BIM y desarrollo de proyectos técnicos.
+Integramos arquitectura, ingeniería y tecnología para transformar ideas en soluciones ejecutables,
+cumpliendo con todas las normativas vigentes y brindando acompañamiento humano y profesional en cada etapa.
+</p>
 </section>
 
-<footer>
-© 2026 AB Obra & Diseño
+<section id="servicios">
+<h2>Servicios</h2>
+<div class="cards">
+
+<div class="card">
+<h3>Diseño Arquitectónico</h3>
+<p>Conceptualización, modelado 3D, planos normativos y desarrollo integral de proyectos.</p>
+</div>
+
+<div class="card">
+<h3>Ingeniería MEP</h3>
+<p>Diseños hidráulicos, eléctricos y de gas con cumplimiento normativo y coordinación técnica.</p>
+</div>
+
+<div class="card">
+<h3>Modelado BIM</h3>
+<p>Coordinación interdisciplinaria, detección de interferencias y optimización de obra.</p>
+</div>
+
+<div class="card">
+<h3>Asesorías Técnicas</h3>
+<p>Acompañamiento especializado para constructores y clientes durante todo el proceso.</p>
+</div>
+
+</div>
+</section>
+
+<section id="paquetes" class="packages">
+<h2>Paquetes de Diseño</h2>
+
+<div class="package-grid">
+
+<div class="package">
+<h3>Esencial</h3>
+<ul>
+<li>Plantas arquitectónicas</li>
+<li>Distribución general</li>
+<li>Cuadro de áreas</li>
+<li>Propuesta conceptual</li>
+<li>Revisión normativa básica</li>
+</ul>
+</div>
+
+<div class="package">
+<h3>Integral</h3>
+<ul>
+<li>Plantas, cortes y fachadas</li>
+<li>Niveles y especificaciones</li>
+<li>Diseño preliminar MEP</li>
+<li>Modelo BIM básico</li>
+<li>Coordinación técnica inicial</li>
+</ul>
+</div>
+
+<div class="package">
+<h3>Ejecutivo Completo</h3>
+<ul>
+<li>Diseño arquitectónico completo</li>
+<li>Modelado BIM avanzado</li>
+<li>Diseño MEP detallado</li>
+<li>Diseño estructural especializado</li>
+<li>Planos listos para construcción</li>
+<li>Acompañamiento técnico</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section class="factors">
+<h2>Sistema de Valoración</h2>
+<p>
+Nuestros proyectos se estructuran bajo tres factores principales:
+<br><br>
+• Alcance del proyecto (qué se entrega exactamente).  
+<br>
+• Complejidad técnica y nivel de especialización.  
+<br>
+• Tamaño del proyecto y área construida.  
+<br><br>
+Esto nos permite ofrecer propuestas claras, justas y adaptadas a cada necesidad.
+</p>
+</section>
+
+<footer id="contacto">
+<p>AB obra y diseño © 2026</p>
+<p>Arquitectura • Ingeniería • BIM • Asesoría Técnica</p>
 </footer>
 
-<a href="https://wa.me/573197662336" target="_blank" class="whatsapp-float">
-    <i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/573197662336?text=Hola%20quiero%20información%20sobre%20un%20proyecto"
+class="whatsapp"
+target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
 </a>
 
 </body>
