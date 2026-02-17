@@ -38,19 +38,21 @@ z-index:1000;
 border-bottom:1px solid rgba(212,175,55,0.18);
 }
 
-/* LOGO MÁS GRANDE */
-
 .logo{
-height:64px;
+height:70px; /* MÁS GRANDE */
 object-fit:contain;
-filter:brightness(0) saturate(100%) invert(80%) sepia(78%) saturate(650%) hue-rotate(5deg) brightness(105%) contrast(102%);
-filter:drop-shadow(0 0 6px rgba(212,175,55,0.45)) drop-shadow(0 0 12px rgba(212,175,55,0.25));
-transition:0.35s;
+filter:drop-shadow(0 0 8px rgba(212,175,55,0.45));
 }
 
-.logo:hover{
-transform:scale(1.05);
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+transition:0.3s;
 }
+
+nav a:hover{opacity:0.6;}
 
 /* HERO */
 
@@ -67,7 +69,7 @@ position:relative;
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
+background:linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.7));
 }
 
 .hero-content{
@@ -77,14 +79,10 @@ padding-left:10%;
 }
 
 .hero h1{
-font-size:66px;
+font-size:64px;
 font-weight:800;
-color:#ffffff;
-text-shadow:
-0 0 1px rgba(255,255,255,0.4),
-0 2px 8px rgba(0,0,0,0.45),
-0 8px 28px rgba(0,0,0,0.55),
-0 0 18px rgba(212,175,55,0.15);
+color:#fff;
+text-shadow:0 8px 28px rgba(0,0,0,0.6);
 }
 
 .hero p{
@@ -92,14 +90,11 @@ margin-top:18px;
 font-size:20px;
 color:#eaeaea;
 max-width:520px;
-text-shadow:0 1px 4px rgba(0,0,0,0.45),0 6px 18px rgba(0,0,0,0.55);
 }
 
 /* NUEVA SECCIÓN VISUAL */
 
-.visual{
-background:#111;
-}
+.visual{background:#111;}
 
 .visual-grid{
 display:grid;
@@ -108,12 +103,7 @@ gap:40px;
 align-items:center;
 }
 
-.visual img{
-width:100%;
-border-radius:14px;
-}
-
-video{
+.visual img, video{
 width:100%;
 border-radius:14px;
 background:black;
@@ -139,6 +129,32 @@ transform:translateY(-10px);
 background:#202020;
 }
 
+/* PACKAGES */
+
+.packages{background:#111;}
+
+.package-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.package{
+background:#1a1a1a;
+padding:40px;
+border:1px solid #333;
+transition:0.4s;
+}
+
+.package:hover{
+transform:translateY(-10px);
+border:1px solid #d4af37;
+}
+
+/* FACTORS */
+
+.factors{background:#151515;}
+
 /* FOOTER */
 
 footer{
@@ -148,16 +164,28 @@ text-align:center;
 color:#aaa;
 }
 
-/* RESPONSIVE */
+/* WHATSAPP */
 
-@media(max-width:900px){
-
-.visual-grid{
-grid-template-columns:1fr;
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+z-index:2000;
 }
 
-.hero h1{font-size:42px;}
+.whatsapp img{width:30px;}
 
+@media(max-width:900px){
+.visual-grid{grid-template-columns:1fr;}
+.hero h1{font-size:42px;}
 section{padding:80px 8%;}
 }
 
@@ -167,7 +195,14 @@ section{padding:80px 8%;}
 <body>
 
 <nav>
-<img src="logo.png" class="logo" alt="AB Obra y Diseño">
+<img src="logo.png" class="logo">
+
+<div>
+<a href="#nosotros">Nosotros</a>
+<a href="#servicios">Servicios</a>
+<a href="#paquetes">Paquetes</a>
+<a href="#contacto">Contacto</a>
+</div>
 </nav>
 
 <section class="hero">
@@ -177,10 +212,10 @@ section{padding:80px 8%;}
 </div>
 </section>
 
-<!-- SECCIÓN VISUAL NUEVA -->
+<!-- NUEVA SECCIÓN VISUAL -->
 
 <section class="visual">
-<h2>Proyectos y distribución espacial</h2>
+<h2>Distribución y visualización del proyecto</h2>
 
 <div class="visual-grid">
 
@@ -191,7 +226,7 @@ section{padding:80px 8%;}
 <div>
 <video controls muted playsinline>
 <source src="IMG_4426.mp4" type="video/mp4">
-Tu navegador no soporta video HTML5.
+Tu navegador no soporta video.
 </video>
 </div>
 
@@ -200,16 +235,45 @@ Tu navegador no soporta video HTML5.
 
 <section id="nosotros">
 <h2>Quiénes somos</h2>
-<p>
-Somos un equipo especializado en diseño integral, coordinación BIM y desarrollo de proyectos técnicos.
-Integramos arquitectura, ingeniería y tecnología para transformar ideas en soluciones ejecutables,
-cumpliendo normativas vigentes y brindando acompañamiento profesional en cada etapa.
-</p>
+<p>Equipo especializado en diseño integral, coordinación BIM y desarrollo técnico cumpliendo normativas vigentes.</p>
 </section>
 
-<footer>
+<section id="servicios">
+<h2>Servicios</h2>
+<div class="cards">
+
+<div class="card"><h3>Diseño Arquitectónico</h3></div>
+<div class="card"><h3>Ingeniería MEP</h3></div>
+<div class="card"><h3>Modelado BIM</h3></div>
+<div class="card"><h3>Asesorías Técnicas</h3></div>
+
+</div>
+</section>
+
+<section id="paquetes" class="packages">
+<h2>Paquetes de Diseño</h2>
+<div class="package-grid">
+
+<div class="package"><h3>Esencial</h3></div>
+<div class="package"><h3>Integral</h3></div>
+<div class="package"><h3>Ejecutivo Completo</h3></div>
+
+</div>
+</section>
+
+<section class="factors">
+<h2>Sistema de Valoración</h2>
+<p>Alcance • Complejidad técnica • Área construida</p>
+</section>
+
+<footer id="contacto">
 <p>AB obra y diseño © 2026</p>
+<p>Arquitectura • Ingeniería • BIM • Asesoría Técnica</p>
 </footer>
+
+<a class="whatsapp" href="https://wa.me/573197662336" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
 
 </body>
 </html>
