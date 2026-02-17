@@ -5,150 +5,210 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AB obra y diseño</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family: 'Montserrat', sans-serif;
-    background:#0f0f0f;
-    color:white;
-    overflow-x:hidden;
+font-family:'Montserrat',sans-serif;
+background:#0f0f0f;
+color:white;
+}
+
+section{
+padding:100px 10%;
+}
+
+h2{
+font-size:38px;
+margin-bottom:40px;
+}
+
+p{
+line-height:1.6;
+color:#cfcfcf;
 }
 
 /* NAV */
 
 nav{
-    position:fixed;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    padding:30px 80px;
-    z-index:1000;
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 10%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 nav h2{
-    font-weight:800;
-    letter-spacing:2px;
+font-weight:800;
+letter-spacing:2px;
 }
 
 nav a{
-    text-decoration:none;
-    color:white;
-    margin-left:30px;
-    font-weight:300;
-    transition:0.3s;
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+transition:0.3s;
 }
 
 nav a:hover{
-    opacity:0.6;
+opacity:0.6;
 }
 
 /* HERO */
 
 .hero{
-    height:100vh;
-    background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    padding:0 100px;
-    position:relative;
+height:100vh;
+background:url('hero.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+position:relative;
 }
 
 .hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.6);
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom,rgba(0,0,0,0.6),rgba(0,0,0,0.9));
 }
 
 .hero-content{
-    position:relative;
-    max-width:700px;
-    animation:fadeUp 1.5s ease;
+position:relative;
+max-width:700px;
+padding-left:10%;
 }
 
 .hero h1{
-    font-size:60px;
-    font-weight:800;
-    line-height:1.1;
+font-size:60px;
+font-weight:800;
 }
 
 .hero p{
-    margin-top:20px;
-    font-weight:300;
-    font-size:18px;
+margin-top:20px;
+font-size:20px;
 }
 
-/* SERVICES */
-
-.services{
-    padding:120px 100px;
-    background:#111;
-}
-
-.services h2{
-    font-size:40px;
-    margin-bottom:60px;
-}
+/* CARDS */
 
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .card{
-    background:#1a1a1a;
-    padding:40px;
-    transition:0.4s;
-    border:1px solid #222;
+background:#1a1a1a;
+padding:35px;
+border:1px solid #222;
+transition:0.4s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    background:#222;
+transform:translateY(-10px);
+background:#202020;
 }
 
-.card h3{
-    margin-bottom:20px;
+/* PACKAGES */
+
+.packages{
+background:#111;
 }
 
-/* ANIMATION */
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.package-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
+
+.package{
+background:#1a1a1a;
+padding:40px;
+border:1px solid #333;
+transition:0.4s;
+}
+
+.package:hover{
+transform:translateY(-10px);
+border:1px solid #d4af37;
+}
+
+.package h3{
+margin-bottom:20px;
+}
+
+.package ul{
+list-style:none;
+margin-bottom:20px;
+}
+
+.package ul li{
+margin-bottom:10px;
+color:#cfcfcf;
+}
+
+/* FACTORS */
+
+.factors{
+background:#151515;
+}
+
+/* FOOTER */
+
+footer{
+background:#0a0a0a;
+padding:50px 10%;
+text-align:center;
+color:#aaa;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+transition:0.3s;
+z-index:2000;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+.whatsapp img{
+width:30px;
+}
+
+/* RESPONSIVE */
 
 @media(max-width:768px){
 
-nav{
-    padding:20px 30px;
-}
-
-.hero{
-    padding:0 30px;
-}
-
 .hero h1{
-    font-size:40px;
+font-size:40px;
 }
 
-.services{
-    padding:80px 30px;
+section{
+padding:80px 8%;
 }
 
 }
@@ -159,45 +219,126 @@ nav{
 <body>
 
 <nav>
-    <h2>AB</h2>
-    <div>
-        <a href="#">Inicio</a>
-        <a href="#">Servicios</a>
-        <a href="#">Proyectos</a>
-        <a href="#">Contacto</a>
-    </div>
+<h2>AB</h2>
+<div>
+<a href="#nosotros">Nosotros</a>
+<a href="#servicios">Servicios</a>
+<a href="#paquetes">Paquetes</a>
+<a href="#contacto">Contacto</a>
+</div>
 </nav>
 
 <section class="hero">
-    <div class="hero-content">
-        <h1>AB obra y diseño</h1>
-        <p>Diseñamos espacios con identidad, precisión y carácter arquitectónico.</p>
-    </div>
+<div class="hero-content">
+<h1>AB obra y diseño</h1>
+<p>Arquitectura, ingeniería y tecnología integradas para proyectos eficientes y normativos.</p>
+</div>
 </section>
 
-<section class="services">
-    <h2>Servicios</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Diseño Arquitectónico</h3>
-            <p>Conceptualización, planos, modelado 3D y visualización profesional.</p>
-        </div>
-
-        <div class="card">
-            <h3>Remodelación</h3>
-            <p>Intervención y optimización de espacios residenciales y comerciales.</p>
-        </div>
-
-        <div class="card">
-            <h3>Construcción</h3>
-            <p>Ejecución de obra con control técnico y supervisión integral.</p>
-        </div>
-
-    </div>
-
+<section id="nosotros">
+<h2>Quiénes somos</h2>
+<p>
+Somos un equipo especializado en diseño integral, coordinación BIM y desarrollo de proyectos técnicos.
+Integramos arquitectura, ingeniería y tecnología para transformar ideas en soluciones ejecutables,
+cumpliendo con todas las normativas vigentes y brindando acompañamiento humano y profesional en cada etapa.
+</p>
 </section>
+
+<section id="servicios">
+<h2>Servicios</h2>
+<div class="cards">
+
+<div class="card">
+<h3>Diseño Arquitectónico</h3>
+<p>Conceptualización, modelado 3D, planos normativos y desarrollo integral de proyectos.</p>
+</div>
+
+<div class="card">
+<h3>Ingeniería MEP</h3>
+<p>Diseños hidráulicos, eléctricos y de gas con cumplimiento normativo y coordinación técnica.</p>
+</div>
+
+<div class="card">
+<h3>Modelado BIM</h3>
+<p>Coordinación interdisciplinaria, detección de interferencias y optimización de obra.</p>
+</div>
+
+<div class="card">
+<h3>Asesorías Técnicas</h3>
+<p>Acompañamiento especializado para constructores y clientes durante todo el proceso.</p>
+</div>
+
+</div>
+</section>
+
+<section id="paquetes" class="packages">
+<h2>Paquetes de Diseño</h2>
+
+<div class="package-grid">
+
+<div class="package">
+<h3>Esencial</h3>
+<ul>
+<li>Plantas arquitectónicas</li>
+<li>Distribución general</li>
+<li>Cuadro de áreas</li>
+<li>Propuesta conceptual</li>
+<li>Revisión normativa básica</li>
+</ul>
+</div>
+
+<div class="package">
+<h3>Integral</h3>
+<ul>
+<li>Plantas, cortes y fachadas</li>
+<li>Niveles y especificaciones</li>
+<li>Diseño preliminar MEP</li>
+<li>Modelo BIM básico</li>
+<li>Coordinación técnica inicial</li>
+</ul>
+</div>
+
+<div class="package">
+<h3>Ejecutivo Completo</h3>
+<ul>
+<li>Diseño arquitectónico completo</li>
+<li>Modelado BIM avanzado</li>
+<li>Diseño MEP detallado</li>
+<li>Diseño estructural especializado</li>
+<li>Planos listos para construcción</li>
+<li>Acompañamiento técnico</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section class="factors">
+<h2>Sistema de Valoración</h2>
+<p>
+Nuestros proyectos se estructuran bajo tres factores principales:
+<br><br>
+• Alcance del proyecto (qué se entrega exactamente).  
+<br>
+• Complejidad técnica y nivel de especialización.  
+<br>
+• Tamaño del proyecto y área construida.  
+<br><br>
+Esto nos permite ofrecer propuestas claras, justas y adaptadas a cada necesidad.
+</p>
+</section>
+
+<footer id="contacto">
+<p>AB obra y diseño © 2026</p>
+<p>Arquitectura • Ingeniería • BIM • Asesoría Técnica</p>
+</footer>
+
+<a href="https://wa.me/573197662336?text=Hola%20quiero%20información%20sobre%20un%20proyecto"
+class="whatsapp"
+target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
 
 </body>
 </html>
+
