@@ -36,7 +36,7 @@ line-height:1.6;
 color:#cfcfcf;
 }
 
-/* NAV */
+/* NAVBAR */
 
 nav{
 position:fixed;
@@ -44,15 +44,52 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:25px 10%;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
+padding:22px 10%;
+background:rgba(0,0,0,0.88);
+backdrop-filter:blur(12px);
 z-index:1000;
+border-bottom:1px solid rgba(212,175,55,0.18);
 }
 
-nav h2{
-font-weight:800;
-letter-spacing:2px;
+/* LOGO ORO BRILLANTE */
+
+.logo{
+height:44px;
+object-fit:contain;
+
+filter:
+brightness(0)
+saturate(100%)
+invert(80%)
+sepia(78%)
+saturate(650%)
+hue-rotate(5deg)
+brightness(105%)
+contrast(102%);
+
+filter:
+drop-shadow(0 0 6px rgba(212,175,55,0.45))
+drop-shadow(0 0 12px rgba(212,175,55,0.25));
+
+transition:0.35s;
+}
+
+.logo:hover{
+filter:
+brightness(0)
+saturate(100%)
+invert(88%)
+sepia(90%)
+saturate(900%)
+hue-rotate(4deg)
+brightness(115%)
+contrast(105%);
+
+filter:
+drop-shadow(0 0 8px rgba(212,175,55,0.7))
+drop-shadow(0 0 18px rgba(212,175,55,0.45));
+
+transform:scale(1.05);
 }
 
 nav a{
@@ -81,7 +118,7 @@ position:relative;
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(to bottom,rgba(0,0,0,0.6),rgba(0,0,0,0.9));
+background:linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.75));
 }
 
 .hero-content{
@@ -93,11 +130,14 @@ padding-left:10%;
 .hero h1{
 font-size:60px;
 font-weight:800;
+text-shadow:0 4px 18px rgba(0,0,0,0.6);
 }
 
 .hero p{
 margin-top:20px;
 font-size:20px;
+color:#e6e6e6;
+text-shadow:0 2px 10px rgba(0,0,0,0.5);
 }
 
 /* CARDS */
@@ -219,7 +259,8 @@ padding:80px 8%;
 <body>
 
 <nav>
-<h2>AB</h2>
+<img src="logo.png" class="logo" alt="AB Obra y Diseño">
+
 <div>
 <a href="#nosotros">Nosotros</a>
 <a href="#servicios">Servicios</a>
@@ -318,13 +359,11 @@ cumpliendo con todas las normativas vigentes y brindando acompañamiento humano 
 <p>
 Nuestros proyectos se estructuran bajo tres factores principales:
 <br><br>
-• Alcance del proyecto (qué se entrega exactamente).  
+• Alcance del proyecto  
 <br>
-• Complejidad técnica y nivel de especialización.  
+• Complejidad técnica  
 <br>
-• Tamaño del proyecto y área construida.  
-<br><br>
-Esto nos permite ofrecer propuestas claras, justas y adaptadas a cada necesidad.
+• Área construida  
 </p>
 </section>
 
@@ -333,11 +372,4 @@ Esto nos permite ofrecer propuestas claras, justas y adaptadas a cada necesidad.
 <p>Arquitectura • Ingeniería • BIM • Asesoría Técnica</p>
 </footer>
 
-<a href="https://wa.me/573197662336?text=Hola%20quiero%20información%20sobre%20un%20proyecto"
-class="whatsapp"
-target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-</a>
-
-</body>
-</html>
+<a href="https://wa.me/573197662336?text=Hola%20quiero%20información%2
